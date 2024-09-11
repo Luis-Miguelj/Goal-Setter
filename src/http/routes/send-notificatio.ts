@@ -7,7 +7,7 @@ export async function sendNotification(server: FastifyInstance) {
     userId: z.string(),
     title: z.string(),
     message: z.string(),
-    sendUserId: z.string(),
+    sendUser: z.string(),
   })
 
   server.post('/send-notification', async (request, reply) => {

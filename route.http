@@ -4,6 +4,9 @@ GET http://localhost:3333/users
 GET http://localhost:3333/users/luis
 
 ###
+GET http://localhost:3333/get-notification/ip1ihad2pctzq4bosz1odcyu
+
+###
 POST http://localhost:3333/user
 Content-Type: application/json
 
@@ -21,5 +24,5 @@ Content-Type: application/json
   "userId": "k2d0eqrsz36fgp7hianp2nsd",
   "title": "New Notification",
   "message": "Hello, you have a new notification",
-  "sendUser": "Sanny"
+  "sendUser": "ip1ihad2pctzq4bosz1odcyu"
 }

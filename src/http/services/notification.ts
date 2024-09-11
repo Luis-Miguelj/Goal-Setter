@@ -9,7 +9,7 @@ const NotificationSchema = z.object({
   userId: z.string(),
   title: z.string(),
   message: z.string(),
-  sendUserId: z.string(),
+  sendUser: z.string(),
 })
 
 type notificationSchema = z.infer<typeof NotificationSchema>
@@ -19,7 +19,7 @@ class Notification {
     const getNotifications = await db
       .select()
       .from(notification)
-      .where(ilike(notification.userId, `%${id}%`))
+      .where(ilike(notification.sendUser, `%${id}%`))
       .orderBy(desc(notification.createdAt))
 
     if (getNotifications) {
@@ -38,7 +38,7 @@ class Notification {
         userId: data.userId,
         title: data.title,
         message: data.message,
-        sendUserId: data.sendUserId,
+        sendUser: data.sendUser,
       })
       .returning()
 
