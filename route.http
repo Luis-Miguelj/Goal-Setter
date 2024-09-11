@@ -1,7 +1,7 @@
 GET http://localhost:3333/users
 
 ###
-GET http://localhost:3333/users/
+GET http://localhost:3333/users/luis
 
 ###
 POST http://localhost:3333/user
@@ -11,4 +11,15 @@ Content-Type: application/json
   "name": "John Doe",
   "email": "jd@gmail.com",
   "password": "123456"
+}
+
+###
+POST http://localhost:3333/send-notification
+Content-Type: application/json
+
+{
+  "userId": "k2d0eqrsz36fgp7hianp2nsd",
+  "title": "New Notification",
+  "message": "Hello, you have a new notification",
+  "sendUser": "Sanny"
 }

@@ -24,7 +24,9 @@ export const notification = pgTable('notification', {
       onDelete: 'cascade',
     })
     .notNull(),
+  title: text('title').notNull(),
   message: text('message').notNull(),
+  sendUserId: text('send_user_id').notNull(),
   read: boolean('read').notNull().default(false),
   createdAt: timestamp('created_at', { withTimezone: true })
     .notNull()

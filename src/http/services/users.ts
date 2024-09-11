@@ -1,6 +1,6 @@
 import { db } from '../../db'
 import { users } from '../../db/schema'
-import { ilike, name } from 'drizzle-orm'
+import { ilike } from 'drizzle-orm'
 
 import { z } from 'zod'
 
