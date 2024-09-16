@@ -48,3 +48,19 @@ export const tasks = pgTable('tasks', {
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
   completed: boolean('completed').notNull().default(false),
 })
+
+export const goals = pgTable('goals', {
+  id: text('id')
+    .primaryKey()
+    .$defaultFn(() => createId()),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+  userId: text('user_id')
+    .notNull()
+    .references(() => users.id, {
+      onDelete: 'cascade',
+    })
+    .notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
+  completed: boolean('completed').notNull().default(false),
+})

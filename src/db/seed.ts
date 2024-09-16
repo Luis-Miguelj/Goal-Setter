@@ -1,7 +1,9 @@
 import { client, db } from '.'
-import { users } from './schema'
+import { notification, tasks, users } from './schema'
 
 async function seed() {
+  await db.delete(notification)
+  await db.delete(tasks)
   await db.delete(users)
 
   await db.insert(users).values([

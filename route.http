@@ -7,12 +7,24 @@ GET http://localhost:3333/users/luis
 GET http://localhost:3333/get-notification/ip1ihad2pctzq4bosz1odcyu
 
 ###
+GET http://localhost:3333/goals/
+
+###
 POST http://localhost:3333/user
 Content-Type: application/json
 
 {
   "name": "John Doe",
   "email": "jd@gmail.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "sb@gmail.com",
   "password": "123456"
 }
 
@@ -25,4 +37,15 @@ Content-Type: application/json
   "title": "New Notification",
   "message": "Hello, you have a new notification",
   "sendUser": "ip1ihad2pctzq4bosz1odcyu"
+}
+
+###
+POST http://localhost:3333/goal
+Content-Type: application/json
+
+{
+  "userId": "abdfbkx126frp4xyhdshtpuh",
+  "title": "New Notification",
+  "description": "Hello, you have a new notification",
+  "completed": false
 }
